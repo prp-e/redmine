@@ -29,7 +29,7 @@ class CalendarsController < ApplicationController
   include QueriesHelper
 
   def show
-    if params[:year] and params[:year].to_i > 1900
+    if params[:year] and params[:year].to_i > 1300 # Making it more compatible with Jalali calendar.
       @year = params[:year].to_i
       if params[:month] and params[:month].to_i > 0 and params[:month].to_i < 13
         @month = params[:month].to_i
