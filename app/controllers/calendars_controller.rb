@@ -38,7 +38,7 @@ class CalendarsController < ApplicationController
     @year ||= User.current.today.year
     @month ||= User.current.today.month
 
-    @calendar = Redmine::Helpers::Calendar.new(Date.civil(@year, @month, 1), current_language, :month)
+    @calendar = Redmine::Helpers::Calendar.new(JalaliDate.new(@year, @month, 1), current_language, :month)
     retrieve_query
     @query.group_by = nil
     @query.sort_criteria = nil
